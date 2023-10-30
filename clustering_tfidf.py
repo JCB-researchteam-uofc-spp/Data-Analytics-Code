@@ -27,7 +27,7 @@ import sys
 import string
 
 
-df = pd.read_csv('ukraine_CDN_26jan-10may2022_pro_Russia_RUS.csv', encoding='utf-8')
+df = pd.read_csv('XXXXX.csv', encoding='utf-8')
 
 
 ## cleaning data code
@@ -118,7 +118,7 @@ pred_arr = np.array(predictions)
 df1 = df
 df2 = pd.DataFrame(predictions)
 df = pd.concat([df1, df2], axis=1)
-df.to_csv('ukraine_CDN_26jan-10may2022_pro_Russia_RUS_cluster.csv', index=True, header = True)
+df.to_csv('XXX_cluster.csv', index=True, header = True)
 
 topic_docs = []
 for topic in range(17):
@@ -131,5 +131,5 @@ df_tfidf = get_top_words(topic_docs, 10)
 # Put limit for score
 df_tfidf = df_tfidf[(df_tfidf.score > 0.08)]
 pd.set_option('display.max_rows', df_tfidf.shape[0]+1)
-df_tfidf.to_csv('ukraine_CDN_26jan-10may2022_pro_Russia_RUS_Tf-idf.csv', index = None, header = True)
+df_tfidf.to_csv('XXX.csv', index = None, header = True)
 topics = df_tfidf['topic'].value_counts()
