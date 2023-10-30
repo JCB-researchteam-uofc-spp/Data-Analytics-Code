@@ -29,7 +29,7 @@ from sklearn.metrics import pairwise_distances
 matplotlib.use('Agg')
 plt.ioff()
 
-df = pd.read_csv('ukraine_CDN_26jan-10may2022_pro_Russia_RUS.csv', encoding='utf-8')
+df = pd.read_csv('XXX.csv', encoding='utf-8')
 
 ## cleaning data code
 
