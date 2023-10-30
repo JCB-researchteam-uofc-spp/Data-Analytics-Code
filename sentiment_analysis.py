@@ -176,7 +176,7 @@ validation_dataloader = data.DataLoader(validation_dataset, shuffle= True, batch
 '''
 Test Dataloader
 ''' 
-test_csv = pd.read_csv('ukraine_CDN_26jan-10may2022_pro_Russia_US_clustering.csv', encoding='utf-8', keep_default_na = False)
+test_csv = pd.read_csv('XXX.csv', encoding='utf-8', keep_default_na = False)
 test_csv = test_csv.filter(['full_text'], axis=1)
 test_dataset = mydataset(test_csv , name = 'test')          
 test_dataloader = data.DataLoader(test_dataset, shuffle= False, batch_size = 1, num_workers=16,pin_memory=True)
@@ -399,10 +399,10 @@ def predict(model, test_loader, device):
         
 
 def make_csv(target):
-    test = pd.read_csv('ukraine_CDN_26jan-10may2022_pro_Russia_US_clustering.csv', encoding='utf-8', keep_default_na = False)
+    test = pd.read_csv('XXX.csv', encoding='utf-8', keep_default_na = False)
     test = test.rename(columns={"Unnamed: 0" : "id"})
     my_submission = pd.DataFrame({'id': test.id, 'target': target})
-    my_submission.to_csv('ukraine_CDN_26jan-10may2022_pro_Russia_US_clustering_sentiment.csv', index=False)
+    my_submission.to_csv('XXX.csv', index=False)
     
 
 predict(model, test_dataloader, device)
